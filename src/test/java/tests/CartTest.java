@@ -20,6 +20,5 @@ public class CartTest extends BaseTest1 {
         productPage.clickAddToCartButton();
         CartPage cartPage = productPage.clickCart();
         Assert.assertEquals(cartPage.countItems(), 2, "Not expected number of items");
-
     }
 }
