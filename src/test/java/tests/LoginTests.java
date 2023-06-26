@@ -11,6 +11,6 @@ public class LoginTests extends BaseTest {
         loginPage.setUsername("standard_user");
         loginPage.setPassword("secret_sauce");
         HomePage homePage = loginPage.clickLoginButton();
-        Assert.assertEquals(homePage.getTitle(), "Products", "Not expected");
+        Assert.assertEquals(homePage.getTitle(), "Products", "Not expecte");
     }
 }
