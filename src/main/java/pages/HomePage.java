@@ -31,7 +31,7 @@ public class HomePage {private WebDriver driver;
         List<WebElement> buttons = driver.findElements(By.className("btn_small"));
         buttons.get(index).click();
     }
-    public void clickRemoveItemFromHomePage(int index){
+    public void clickRemoveFromHomePage(int index){
         List<WebElement> buttons = driver.findElements(By.className("btn_small"));
         buttons.get(index).click();
     }

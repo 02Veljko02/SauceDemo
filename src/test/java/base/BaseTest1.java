@@ -15,11 +15,11 @@ public class BaseTest1 {
     public void setUp(){
         driver = new ChromeDriver();
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
-        this.backtoLoginPage();
+        this.backToLoginPage();
         driver.manage().window().maximize();
     }
     @BeforeMethod
-    public void backtoLoginPage(){
+    public void backToLoginPage(){
         driver.get("https://www.saucedemo.com/");
         loginPage = new LoginPage(driver);
     }

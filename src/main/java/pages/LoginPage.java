@@ -8,7 +8,7 @@ public class LoginPage {
     private By usernameField = By.id("user-name");
     private By passwordField = By.id("password");
     private By loginButton = By.id("login-button");
-    private By errorMessage = By.cssSelector("#login_button_container > div > form > div.error-message-container.error > h3");
+    private By error = By.cssSelector("#login_button_container > div > form > div.error-message-container.error > h3");
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
@@ -24,6 +24,6 @@ public class LoginPage {
         return new HomePage(driver);
     }
     public String getErrorMessage(){
-        return driver.findElement(errorMessage).getText();
+        return driver.findElement(error).getText();
     }
 }

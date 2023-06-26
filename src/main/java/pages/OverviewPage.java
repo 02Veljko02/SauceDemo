@@ -14,7 +14,7 @@ public class OverviewPage {
     public String getItemTotal(){
         return driver.findElement(itemTotal).getText();
     }
-    public CompleteCheckoutPage clickFinishButton(){
+    public CompleteCheckoutPage clickFinish(){
         driver.findElement(finishButton).click();
         return new CompleteCheckoutPage(driver);
     }

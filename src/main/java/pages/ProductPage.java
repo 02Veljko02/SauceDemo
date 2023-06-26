@@ -13,7 +13,7 @@ public class ProductPage {
     public ProductPage(WebDriver driver) {
         this.driver = driver;
     }
-    public void clickAddToCartButton(){
+    public void clickAddToCart(){
         driver.findElement(addToCartButton).click();
     }
     public HomePage clickBackToProducts(){

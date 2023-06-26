@@ -10,7 +10,7 @@ public class CompleteCheckoutPage {
     public CompleteCheckoutPage(WebDriver driver) {
         this.driver = driver;
     }
-    public HomePage clickBackHomeButton(){
+    public HomePage clickBackHome(){
         driver.findElement(backHomeButton).click();
         return new HomePage(driver);
     }

@@ -15,12 +15,12 @@ public class CartTest extends BaseTest1 {
         HomePage homePage = loginPage.clickLoginButton();
         ProductPage productPage = homePage.clickProductPage("Sauce Labs Backpack");
         Assert.assertEquals(productPage.getProductName(), "Sauce Labs Backpack", "Not true product name");
-        productPage.clickAddToCartButton();
+        productPage.clickAddToCart();
         homePage = productPage.clickBackToProducts();
         productPage = homePage.clickProductPage("Sauce Labs Bike Light");
-        productPage.clickAddToCartButton();
+        productPage.clickAddToCart();
         CartPage cartPage = productPage.clickCart();
-        Assert.assertEquals(cartPage.countItems(), 2, "Not expected number of items");
+        Assert.assertEquals(cartPage.countItems(), 2, "Not true number of items");
     }
 
     @Test
@@ -45,10 +45,10 @@ public class CartTest extends BaseTest1 {
         HomePage homePage = loginPage.clickLoginButton();
         ProductPage productPage = homePage.clickProductPage("Sauce Labs Backpack");
         Assert.assertEquals(productPage.getProductName(), "Sauce Labs Backpack", "Not true product name");
-        productPage.clickAddToCartButton();
+        productPage.clickAddToCart();
         homePage = productPage.clickBackToProducts();
         productPage = homePage.clickProductPage("Sauce Labs Bike Light");
-        productPage.clickAddToCartButton();
+        productPage.clickAddToCart();
         CartPage cartPage = productPage.clickCart();
         Assert.assertEquals(cartPage.countItems(), 2, "Not expected number of items");
     }

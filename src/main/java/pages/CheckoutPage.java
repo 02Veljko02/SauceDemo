@@ -7,7 +7,7 @@ public class CheckoutPage {
     private WebDriver driver;
     private By firstNameField = By.id("first-name");
     private By lastNameField = By.id("last-name");
-    private By postalCodeField = By.id("postal-code");
+    private By postalCodefield = By.id("postal-code");
     private By continueButton = By.id("continue");
 
     public CheckoutPage(WebDriver driver) {
@@ -20,7 +20,7 @@ public class CheckoutPage {
         driver.findElement(lastNameField).sendKeys(lastName);
     }
     public void setPostalCode(String postalCode){
-        driver.findElement(postalCodeField).sendKeys(postalCode);
+        driver.findElement(postalCodefield).sendKeys(postalCode);
     }
     public OverviewPage clickContinueButton(){
         driver.findElement(continueButton).click();

@@ -23,7 +23,7 @@ public class CartPage {
         List<WebElement> button = driver.findElements(remove);
         button.get(index);
     }
-    public CheckoutPage clickCheckout(){
+    public CheckoutPage clickCheckoutButton(){
         driver.findElement(checkout).click();
         return new CheckoutPage(driver);
     }

@@ -16,7 +16,7 @@ public class LoginTests extends BaseTest1 {
 
     @Test
     public void unsuccessfullLogin1() {
-        loginPage.setUsername("Veljko");
+        loginPage.setUsername("veljko");
         loginPage.setPassword("secret_sauce");
         loginPage.clickLoginButton();
         Assert.assertEquals(loginPage.getErrorMessage(),
