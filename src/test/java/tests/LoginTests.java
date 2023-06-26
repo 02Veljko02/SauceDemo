@@ -1,11 +1,11 @@
 package tests;
 
-import base.BaseTest;
+import base.BaseTest1;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HomePage;
 
-public class LoginTests extends BaseTest {
+public class LoginTests extends BaseTest1 {
     @Test
     public void standardUserLogin() {
         loginPage.setUsername("standard_user");

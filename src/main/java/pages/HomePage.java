@@ -22,4 +22,6 @@ public class HomePage {
         driver.findElement(cart).click();
         return new CartPage(driver);
     }
+
+
 }

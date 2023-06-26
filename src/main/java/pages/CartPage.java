@@ -15,8 +15,9 @@ public class CartPage {
     public CartPage(WebDriver driver) {
         this.driver = driver;
     }
-    public void countItems(){
-        driver.findElements(By.className("cart_item")).size();
+    public int countItems(){
+
+        return driver.findElements(By.className("item_pricebar")).size();
     }
     public void clickRemoveByIndex(int index){
         List<WebElement> button = driver.findElements(remove);
