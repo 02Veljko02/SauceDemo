@@ -9,11 +9,12 @@ import pages.ProductPage;
 
 public class CartTest extends BaseTest1 {
     @Test
-    public void countItemsTest(){
-        loginPage.setUsername("standard_user");
+    public void countItemsTest() {
+        loginPage.setUsername("performance_glitch_user");
         loginPage.setPassword("secret_sauce");
         HomePage homePage = loginPage.clickLoginButton();
-        ProductPage productPage =homePage.clickProductPage("Sauce Labs Backpack");
+        ProductPage productPage = homePage.clickProductPage("Sauce Labs Backpack");
+        Assert.assertEquals(productPage.getProductName(), "Sauce Labs Backpack", "Not true product name");
         productPage.clickAddToCartButton();
         homePage = productPage.clickBackToProducts();
         productPage = homePage.clickProductPage("Sauce Labs Bike Light");
@@ -21,8 +22,9 @@ public class CartTest extends BaseTest1 {
         CartPage cartPage = productPage.clickCart();
         Assert.assertEquals(cartPage.countItems(), 2, "Not expected number of items");
     }
+
     @Test
-    public void countItemsTest2(){
+    public void countItemsTest2() {
         loginPage.setUsername("standard_user");
         loginPage.setPassword("secret_sauce");
         HomePage homePage = loginPage.clickLoginButton();
@@ -36,5 +38,18 @@ public class CartTest extends BaseTest1 {
         Assert.assertEquals(cartPage.countItems(), 6, "Not expected number of items");
     }
 
-
+    @Test
+    public void checkProducts() {
+        loginPage.setUsername("problem_user");
+        loginPage.setPassword("secret_sauce");
+        HomePage homePage = loginPage.clickLoginButton();
+        ProductPage productPage = homePage.clickProductPage("Sauce Labs Backpack");
+        Assert.assertEquals(productPage.getProductName(), "Sauce Labs Backpack", "Not true product name");
+        productPage.clickAddToCartButton();
+        homePage = productPage.clickBackToProducts();
+        productPage = homePage.clickProductPage("Sauce Labs Bike Light");
+        productPage.clickAddToCartButton();
+        CartPage cartPage = productPage.clickCart();
+        Assert.assertEquals(cartPage.countItems(), 2, "Not expected number of items");
+    }
 }
