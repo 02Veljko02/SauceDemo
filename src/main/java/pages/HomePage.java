@@ -12,6 +12,7 @@ import java.util.List;
 public class HomePage {private WebDriver driver;
     private By title = By.className("title");
     private By cart = By.className("shopping_cart_link");
+    private By cartLogoNumber = By.className("shopping_cart_badge");
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -31,10 +32,16 @@ public class HomePage {private WebDriver driver;
         List<WebElement> buttons = driver.findElements(By.className("btn_small"));
         buttons.get(index).click();
     }
-    public void clickRemoveFromHomePage(int index){
+    public void clickRemoveFromHomePageByIndex(int index){
         List<WebElement> buttons = driver.findElements(By.className("btn_small"));
         buttons.get(index).click();
     }
-
+    public int countRemoveButtons(){
+        List<WebElement> remove = driver.findElements(By.className("btn_secondary"));
+        return remove.size();
+    }
+    public String getCartLogoNumber(){
+        return driver.findElement(cartLogoNumber).getText();
+    }
 
 }

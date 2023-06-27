@@ -16,12 +16,11 @@ public class CartPage {
         this.driver = driver;
     }
     public int countItems(){
-
         return driver.findElements(By.className("item_pricebar")).size();
     }
     public void clickRemoveByIndex(int index){
         List<WebElement> button = driver.findElements(remove);
-        button.get(index);
+        button.get(index).click();
     }
     public CheckoutPage clickCheckoutButton(){
         driver.findElement(checkout).click();
