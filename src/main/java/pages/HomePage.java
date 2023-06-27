@@ -44,4 +44,6 @@ public class HomePage {private WebDriver driver;
         return driver.findElement(cartLogoNumber).getText();
     }
 
+
 }
+

@@ -1,0 +1,16 @@
+data1:
+  username: "standard_user"
+  password: "secret_sauce"
+data2:
+  username: "problem_user"
+  password: "secret_sauce"
+data3:
+  username: "locked_out_user"
+  password: "secret_sauce"
+data4:
+  username: "performance_glitch_user"
+  password: "secret_sauce"
+data5:
+  username: "Veljko"
+  password: "secret_sauce"
+
