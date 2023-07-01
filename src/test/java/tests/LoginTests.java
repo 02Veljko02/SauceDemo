@@ -15,26 +15,6 @@ public class LoginTests extends BaseTest1 {
     }
 
     @Test
-    public void unsuccessfullLogin1() {
-        loginPage.setUsername("veljko");
-        loginPage.setPassword("secret_sauce");
-        loginPage.clickLoginButton();
-        Assert.assertEquals(loginPage.getErrorMessage(),
-                "Epic sadface: Username and password do not match any user in this service",
-                "User is login successfully");
-    }
-
-    @Test
-    public void unsuccessfullLogin2() {
-        loginPage.setUsername("standard_user");
-        loginPage.setPassword("Veljko");
-        loginPage.clickLoginButton();
-        Assert.assertEquals(loginPage.getErrorMessage(),
-                "Epic sadface: Username and password do not match any user in this service",
-                "User is login successfully");
-    }
-
-    @Test
     public void problemUserLogin() {
         loginPage.setUsername("problem_user");
         loginPage.setPassword("secret_sauce");
@@ -59,6 +39,25 @@ public class LoginTests extends BaseTest1 {
         HomePage homePage = loginPage.clickLoginButton();
         Assert.assertEquals(homePage.getTitle(), "Products", "Not expected");
     }
+    @Test
+    public void loginWithWrongUsername() {
+        loginPage.setUsername("veljko");
+        loginPage.setPassword("secret_sauce");
+        loginPage.clickLoginButton();
+        Assert.assertEquals(loginPage.getErrorMessage(),
+                "Epic sadface: Username and password do not match any user in this service",
+                "User is login successfully");
+    }
+
+    @Test
+    public void LoginWithWrongPassword() {
+        loginPage.setUsername("standard_user");
+        loginPage.setPassword("Veljko");
+        loginPage.clickLoginButton();
+        Assert.assertEquals(loginPage.getErrorMessage(),
+                "Epic sadface: Username and password do not match any user in this service",
+                "User is login successfully");
+    }
 
     @Test
     public void loginJustWithUsername() {
@@ -73,6 +72,15 @@ public class LoginTests extends BaseTest1 {
     public void loginJustWithPassword() {
         loginPage.setUsername("");
         loginPage.setPassword("secret_sauce");
+        loginPage.clickLoginButton();
+        Assert.assertEquals(loginPage.getErrorMessage(),
+                "Epic sadface: Username is required",
+                "User is login successfully");
+    }
+    @Test
+    public void loginWithoutUsernameandPassword() {
+        loginPage.setUsername("");
+        loginPage.setPassword("");
         loginPage.clickLoginButton();
         Assert.assertEquals(loginPage.getErrorMessage(),
                 "Epic sadface: Username is required",
