@@ -7,9 +7,9 @@ import pages.CartPage;
 import pages.HomePage;
 import pages.ProductPage;
 
-public class RemoveFromCartPageTests extends BaseTest1 {
+public class RemoveProductsAddedFromProductPageTests extends BaseTest1 {
     @Test
-    public void removeFromCartPageTest(){
+    public void removeOneItemTest(){
         loginPage.setUsername("standard_user");
         loginPage.setPassword("secret_sauce");
         HomePage homePage = loginPage.clickLoginButton();
@@ -21,7 +21,7 @@ public class RemoveFromCartPageTests extends BaseTest1 {
         Assert.assertEquals(cartPage.countItems(), 0, "Not expected number of items");
     }
     @Test
-    public void removeSixItemsFromCartPageTest() {
+    public void removeSixItemsTest() {
         loginPage.setUsername("standard_user");
         loginPage.setPassword("secret_sauce");
         HomePage homePage = loginPage.clickLoginButton();

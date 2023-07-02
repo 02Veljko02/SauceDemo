@@ -30,6 +30,22 @@ public class DataUtil extends BaseTest1 {
     public static Object[][] dataProvider5(){
         return readYaml("src/main/resources/data1.yaml", "data5");
     }
+    @DataProvider
+    public static Object[][] dataProvider6(){
+        return readYaml("src/main/resources/data1.yaml", "data6");
+    }
+    @DataProvider
+    public static Object[][] dataProvider7(){
+        return readYaml("src/main/resources/data1.yaml", "data7");
+    }
+    @DataProvider
+    public static Object[][] dataProvider8(){
+        return readYaml("src/main/resources/data1.yaml", "data8");
+    }
+    @DataProvider
+    public static Object[][] dataProvider9(){
+        return readYaml("src/main/resources/data1.yaml", "data9");
+    }
     private static Object [][] readYaml(String filePath, String yamlObject){
         InputStream inputStream = null;
         try {

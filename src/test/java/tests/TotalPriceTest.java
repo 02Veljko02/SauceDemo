@@ -7,12 +7,15 @@ import pages.CartPage;
 import pages.CheckoutPage;
 import pages.HomePage;
 import pages.OverviewPage;
+import utils.DataUtil;
+
+import java.util.HashMap;
 
 public class TotalPriceTest extends BaseTest1 {
-    @Test
-    public void getItemTotalTest() {
-        loginPage.setUsername("standard_user");
-        loginPage.setPassword("secret_sauce");
+    @Test(dataProviderClass = DataUtil.class, dataProvider = "dataProvider")
+    public void getItemTotalTest(HashMap<String, String> hashMap) {
+        loginPage.setUsername(hashMap.get("username"));
+        loginPage.setPassword(hashMap.get("password"));
         HomePage homePage = loginPage.clickLoginButton();
         homePage.clickAddToCartFromHomePageByIndex(0);
         CartPage cartPage = homePage.clickCart();

@@ -5,21 +5,24 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.CartPage;
 import pages.HomePage;
+import utils.DataUtil;
 
-public class AddToCartFromHomePageTests extends BaseTest1 {
-    @Test
-    public void addOneItemTest() {
-        loginPage.setUsername("standard_user");
-        loginPage.setPassword("secret_sauce");
+import java.util.HashMap;
+
+public class AddToCartTests extends BaseTest1 {
+    @Test(dataProviderClass = DataUtil.class, dataProvider = "dataProvider")
+    public void addOneItemTest(HashMap<String, String> hashMap) {
+        loginPage.setUsername(hashMap.get("username"));
+        loginPage.setPassword(hashMap.get("password"));
         HomePage homePage = loginPage.clickLoginButton();
         homePage.clickAddToCartFromHomePageByIndex(0);
         CartPage cartPage = homePage.clickCart();
         Assert.assertEquals(cartPage.countItems(), 1, "Not true number of items");
     }
-    @Test
-    public void addSixItemsTest() {
-        loginPage.setUsername("standard_user");
-        loginPage.setPassword("secret_sauce");
+    @Test(dataProviderClass = DataUtil.class, dataProvider = "dataProvider")
+    public void addSixItemsTest(HashMap<String, String> hashMap) {
+        loginPage.setUsername(hashMap.get("username"));
+        loginPage.setPassword(hashMap.get("password"));
         HomePage homePage = loginPage.clickLoginButton();
         homePage.clickAddToCartFromHomePageByIndex(0);
         homePage.clickAddToCartFromHomePageByIndex(1);

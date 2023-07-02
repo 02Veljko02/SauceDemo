@@ -4,12 +4,15 @@ import base.BaseTest1;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
+import utils.DataUtil;
+
+import java.util.HashMap;
 
 public class FinishShoppingTest extends BaseTest1 {
-    @Test
-    public void finishShoppingTest(){
-        loginPage.setUsername("performance_glitch_user");
-        loginPage.setPassword("secret_sauce");
+    @Test(dataProviderClass = DataUtil.class, dataProvider = "dataProvider")
+    public void finishShoppingTest(HashMap<String, String> hashMap){
+        loginPage.setUsername(hashMap.get("username"));
+        loginPage.setPassword(hashMap.get("password"));
         HomePage homePage = loginPage.clickLoginButton();
         homePage.clickAddToCartFromHomePageByIndex(0);
         CartPage cartPage = homePage.clickCart();

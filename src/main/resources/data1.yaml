@@ -11,6 +11,19 @@ data4:
   username: "performance_glitch_user"
   password: "secret_sauce"
 data5:
-  username: "Veljko"
+  username: "veljko"
   password: "secret_sauce"
+data6:
+  username: "standard_user"
+  password: "veljko"
+data7:
+  username: "standard_user"
+  password: ""
+data8:
+  username: ""
+  password: "secret_sauce"
+data9:
+  username: ""
+  password: ""
+
 
