@@ -7,7 +7,7 @@ import pages.HomePage;
 
 public class LoginTests extends BaseTest1 {
     @Test
-    public void standardUserLogin() {
+    public void standardUserLoginTest() {
         loginPage.setUsername("standard_user");
         loginPage.setPassword("secret_sauce");
         HomePage homePage = loginPage.clickLoginButton();
@@ -15,7 +15,7 @@ public class LoginTests extends BaseTest1 {
     }
 
     @Test
-    public void problemUserLogin() {
+    public void problemUserLoginTest() {
         loginPage.setUsername("problem_user");
         loginPage.setPassword("secret_sauce");
         HomePage homePage = loginPage.clickLoginButton();
@@ -23,7 +23,7 @@ public class LoginTests extends BaseTest1 {
     }
 
     @Test
-    public void lockedUsedLogin() {
+    public void lockedUsedLoginTest() {
         loginPage.setUsername("locked_out_user");
         loginPage.setPassword("secret_sauce");
         loginPage.clickLoginButton();
@@ -33,14 +33,14 @@ public class LoginTests extends BaseTest1 {
     }
 
     @Test
-    public void performanceGlitchUserLogin() {
+    public void performanceGlitchUserLoginTest() {
         loginPage.setUsername("performance_glitch_user");
         loginPage.setPassword("secret_sauce");
         HomePage homePage = loginPage.clickLoginButton();
         Assert.assertEquals(homePage.getTitle(), "Products", "Not expected");
     }
     @Test
-    public void loginWithWrongUsername() {
+    public void loginWithWrongUsernameTest() {
         loginPage.setUsername("veljko");
         loginPage.setPassword("secret_sauce");
         loginPage.clickLoginButton();
@@ -50,9 +50,9 @@ public class LoginTests extends BaseTest1 {
     }
 
     @Test
-    public void LoginWithWrongPassword() {
+    public void LoginWithWrongPasswordTest() {
         loginPage.setUsername("standard_user");
-        loginPage.setPassword("Veljko");
+        loginPage.setPassword("veljko");
         loginPage.clickLoginButton();
         Assert.assertEquals(loginPage.getErrorMessage(),
                 "Epic sadface: Username and password do not match any user in this service",
@@ -60,7 +60,7 @@ public class LoginTests extends BaseTest1 {
     }
 
     @Test
-    public void loginJustWithUsername() {
+    public void loginJustWithUsernameTest() {
         loginPage.setUsername("standard_user");
         loginPage.setPassword("");
         loginPage.clickLoginButton();
@@ -69,7 +69,7 @@ public class LoginTests extends BaseTest1 {
                 "User is login successfully");
     }
     @Test
-    public void loginJustWithPassword() {
+    public void loginJustWithPasswordTest() {
         loginPage.setUsername("");
         loginPage.setPassword("secret_sauce");
         loginPage.clickLoginButton();
@@ -78,7 +78,7 @@ public class LoginTests extends BaseTest1 {
                 "User is login successfully");
     }
     @Test
-    public void loginWithoutUsernameandPassword() {
+    public void loginWithoutUsernameandPasswordTest() {
         loginPage.setUsername("");
         loginPage.setPassword("");
         loginPage.clickLoginButton();

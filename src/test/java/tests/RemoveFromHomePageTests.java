@@ -3,6 +3,7 @@ package tests;
 import base.BaseTest1;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.CartPage;
 import pages.HomePage;
 
 public class RemoveFromHomePageTests extends BaseTest1 {
@@ -13,7 +14,8 @@ public class RemoveFromHomePageTests extends BaseTest1 {
         HomePage homePage = loginPage.clickLoginButton();
         homePage.clickAddToCartFromHomePageByIndex(0);
         homePage.clickRemoveFromHomePageByIndex(0);
-        Assert.assertEquals(homePage.countRemoveButtons(), 0, "Not expected number");
+        CartPage cartPage = homePage.clickCart();
+        Assert.assertEquals(cartPage.countItems(), 0, "Not expected number");
     }
     @Test
     public void removeSixItemsFromHomePageTest(){
@@ -32,6 +34,7 @@ public class RemoveFromHomePageTests extends BaseTest1 {
         homePage.clickRemoveFromHomePageByIndex(3);
         homePage.clickRemoveFromHomePageByIndex(4);
         homePage.clickRemoveFromHomePageByIndex(5);
-        Assert.assertEquals(homePage.countRemoveButtons(), 0, "Not expected number");
+        CartPage cartPage = homePage.clickCart();
+        Assert.assertEquals(cartPage.countItems(), 0, "Not expected number");
     }
 }

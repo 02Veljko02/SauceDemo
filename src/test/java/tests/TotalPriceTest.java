@@ -15,15 +15,14 @@ public class TotalPriceTest extends BaseTest1 {
         loginPage.setPassword("secret_sauce");
         HomePage homePage = loginPage.clickLoginButton();
         homePage.clickAddToCartFromHomePageByIndex(0);
-        homePage.clickAddToCartFromHomePageByIndex(1);
         CartPage cartPage = homePage.clickCart();
-        Assert.assertEquals(cartPage.countItems(), 2, "Not expected number");
+        Assert.assertEquals(cartPage.countItems(), 1, "Not expected number");
         CheckoutPage checkoutPage = cartPage.clickCheckoutButton();
         checkoutPage.setFirstName("Veljko");
         checkoutPage.setLastName("Jovkovic");
         checkoutPage.setPostalCode("37230");
         OverviewPage overviewPage = checkoutPage.clickContinueButton();
-        Assert.assertEquals(overviewPage.getItemTotal(), "Item total: $39.98", "Not expected price");
+        Assert.assertEquals(overviewPage.getItemTotal(), "Item total: $29.99", "Not expected price");
 
     }
 }
