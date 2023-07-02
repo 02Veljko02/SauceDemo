@@ -1,6 +1,9 @@
 data1:
   username: "standard_user"
   password: "secret_sauce"
+  firstName: "Veljko"
+  lastName: "Jovkovic"
+  postalCode: "37230"
 data2:
   username: "problem_user"
   password: "secret_sauce"

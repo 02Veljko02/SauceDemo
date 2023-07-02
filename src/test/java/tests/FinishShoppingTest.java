@@ -18,9 +18,9 @@ public class FinishShoppingTest extends BaseTest1 {
         CartPage cartPage = homePage.clickCart();
         Assert.assertEquals(cartPage.countItems(), 1, "Not expected number");
         CheckoutPage checkoutPage = cartPage.clickCheckoutButton();
-        checkoutPage.setFirstName("Veljko");
-        checkoutPage.setLastName("Jovkovic");
-        checkoutPage.setPostalCode("37230");
+        checkoutPage.setFirstName(hashMap.get("firstName"));
+        checkoutPage.setLastName(hashMap.get("lastName"));
+        checkoutPage.setPostalCode(hashMap.get("postalCode"));
         OverviewPage overviewPage = checkoutPage.clickContinueButton();
         Assert.assertEquals(overviewPage.getItemTotal(), "Item total: $29.99", "Not expected price");
         CompleteCheckoutPage completeCheckoutPage = overviewPage.clickFinish();
